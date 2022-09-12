@@ -11,7 +11,7 @@ const ArticleList = ({ posts }) => {
           </p>
           <div className="flex flex-col justify-center items-start space-y-4 mt-6">
             {posts?.map((post) => (
-              <ArticleItem post={post} />
+              <ArticleItem key={post.id} post={post} />
             ))}
           </div>
         </div>
