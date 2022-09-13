@@ -45,6 +45,7 @@ export const getPosts = async () => {
 };
 
 export const getPostByUserId = async (userId) => {
+  if (!userId) return;
   try {
     const postsRef = query(
       collection(db, "posts"),
@@ -56,5 +57,6 @@ export const getPostByUserId = async (userId) => {
     return posts;
   } catch (error) {
     // toast("Something went wrong");
+    console.log(error.message);
   }
 };

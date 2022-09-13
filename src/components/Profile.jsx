@@ -7,7 +7,7 @@ const Profile = ({ user }) => {
 
   useEffect(() => {
     if (!user) return;
-    getPostByUserId(user.id).then((posts) => setPosts(posts));
+    getPostByUserId(user.uid).then((posts) => setPosts(posts));
   }, [user]);
   return (
     <>

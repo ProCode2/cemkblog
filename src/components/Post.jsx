@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { getUserById } from "../../utils/users";
+import CategoryCatalogue from "./CategoryCatalogue";
 
 const Post = ({ post }) => {
   const [username, setUsername] = useState("");
@@ -32,6 +33,7 @@ const Post = ({ post }) => {
             date.getSeconds()}
         </p>
       </div>
+      <CategoryCatalogue tags={post?.tags} />
       <div className="m-2 mt-6">
         <ReactMarkdown>{`${post.content}`}</ReactMarkdown>
       </div>

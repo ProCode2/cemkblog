@@ -9,7 +9,7 @@ const ArticleItem = ({ post }) => {
 
   useEffect(() => {
     getUserById(post.createdBy).then((user) => {
-      setUsername(user.username || "");
+      setUsername(user?.username || "");
     });
   });
 
@@ -23,7 +23,7 @@ const ArticleItem = ({ post }) => {
           </p>
         </Link>
         <p className="text-sm text-gray-500 dark:text-gray-400 max-w-3xl text-left">
-          {post.content}
+          {post.content?.toString().slice(0, 30)}...
         </p>
       </div>
     </Link>

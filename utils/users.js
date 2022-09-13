@@ -4,8 +4,9 @@ import { db } from "../config/firebase";
 
 export const createIfNotExits = async (user) => {
   try {
-    const user = getUserById(user.uid);
-    if (!user) {
+    const newUser = await getUserById(user.uid);
+    console.log(newUser);
+    if (!newUser) {
       await setDoc(doc(db, "users", user.uid), {
         uid: user.uid,
         username: user.displayName,
@@ -19,6 +20,7 @@ export const createIfNotExits = async (user) => {
     }
   } catch (error) {
     toast.error("Something went wrong");
+    console.log(error.message);
   }
 };
 
