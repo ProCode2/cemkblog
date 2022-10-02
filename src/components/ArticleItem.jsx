@@ -15,7 +15,7 @@ const ArticleItem = ({ post }) => {
 
   return (
     <Link href={`/posts/${post.id}`}>
-      <div className="border border-gray-600 dark:border-gray-100 bg-gray-50 dark:bg-slate-900 rounded-md shadow p-4 text-left w-96 cursor-pointer hover:shadow-lg dark:shadow-gray-400">
+      <div className="border border-gray-600 dark:border-gray-100 bg-gray-50 dark:bg-slate-900 rounded-md shadow p-4 text-left w-full max-w-5xl cursor-pointer hover:shadow-lg dark:shadow-gray-400">
         <h4 className="text-xl md:text-2xl">{post.title}</h4>
         <Link href={`/profile/${post.createdBy}`}>
           <p className="font-mono text-gray-600 dark:text-gray-200 text-sm mt-2 mb-4">
